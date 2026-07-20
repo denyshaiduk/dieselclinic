@@ -57,14 +57,28 @@ const serviceDetails = {
   'regulyuvannya-pnvt': { keywords: 'регулювання ПНВТ Одеса, налаштування паливного насоса, регулювання ТНВД', symptoms: ['підвищена витрата пального', 'нерівна робота дизельного двигуна', 'недостатня або надмірна подача'], works: ['Вимірювання подачі пального', 'Налаштування тиску й циклової подачі', 'Контроль роботи на стенді'] },
 }
 
+export const serviceImages = [
+  'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=85',
+  'https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=1400&q=85',
+]
+
+let imageCursor = 0
 export const servicePages = Object.fromEntries(
-  serviceGroups.flatMap((group) => group.items.map((item) => [item.slug, {
-    ...item,
-    group: group.title,
-    icon: group.title === 'Ремонт ПНВТ' ? CircleGauge : Fuel,
-    description: descriptions[item.slug],
-    ...serviceDetails[item.slug],
-  }]))
+  serviceGroups.flatMap((group) => group.items.map((item) => {
+    const image = serviceImages[imageCursor % serviceImages.length]
+    imageCursor += 1
+    return [item.slug, {
+      ...item,
+      group: group.title,
+      icon: group.title === 'Ремонт ПНВТ' ? CircleGauge : Fuel,
+      image,
+      description: descriptions[item.slug],
+      ...serviceDetails[item.slug],
+    }]
+  }))
 )
 
 export const workshopSteps = [
