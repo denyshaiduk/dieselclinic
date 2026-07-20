@@ -1,12 +1,27 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { ArrowRight, Check, ChevronRight, MapPin, Menu, Phone, ShieldCheck, Wrench, X } from 'lucide-react'
 import { serviceBenefits, serviceGroups, workshopSteps } from './serviceData'
 
 function ServicePage({ service }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState(null)
+  const location = useLocation()
   const Icon = service.icon
+
+  useEffect(() => {
+    setActiveDropdown(null)
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (!activeDropdown) return
+    const closeOnOutsideClick = (event) => {
+      if (!event.target.closest('.nav-dropdown')) setActiveDropdown(null)
+    }
+    document.addEventListener('click', closeOnOutsideClick)
+    return () => document.removeEventListener('click', closeOnOutsideClick)
+  }, [activeDropdown])
 
   useEffect(() => {
     document.title = `${service.title} в Одесі | Дизель-Клінік`
