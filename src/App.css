@@ -13,7 +13,7 @@
   --goldd: rgba(24,169,87,.10);
   --text:  #1B2430;
   --muted: #64748A;
-  --faint: #A9B3C2;
+  --faint: #62707F;
   --line: rgba(20,30,45,.09);
   --line2: rgba(20,30,45,.15);
   --ink:   #06210F;
@@ -107,7 +107,7 @@ h2 { font-size: clamp(31px, 3.5vw, 48px); line-height: 1.13; }
 .hero-panel div { min-width: 148px; padding: 22px 26px; border-right: 1px solid rgba(0,0,0,.15); }
 .hero-panel div:last-child { border: 0; }
 .hero-panel strong { display: block; font: 700 21px 'Roboto Slab', serif; }
-.hero-panel span { display: block; margin-top: 4px; text-transform: uppercase; font: 500 9px 'DM Mono', monospace; letter-spacing: .08em; opacity: .65; }
+.hero-panel span { display: block; margin-top: 4px; text-transform: uppercase; font: 500 9px 'DM Mono', monospace; letter-spacing: .08em; opacity: .82; }
 
 /* ============================================================
    TRUST STRIP
@@ -188,7 +188,7 @@ h2 { font-size: clamp(31px, 3.5vw, 48px); line-height: 1.13; }
    ============================================================ */
 .quick-call { background: var(--bg3); color: var(--text); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .quick-call-inner { min-height: 270px; display: grid; grid-template-columns: 1fr .75fr; align-items: center; gap: 80px; }
-.quick-call .kicker { color: var(--gold2); }
+.quick-call .kicker { color: var(--gold); }
 .quick-call h2 { margin: 0; font: 700 clamp(31px, 3.5vw, 46px)/1.15 'Roboto Slab', serif; color: var(--text); }
 .quick-call h2 em { color: var(--gold); font-style: normal; }
 .quick-call-inner > div:last-child > p { margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.7; }
