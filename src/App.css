@@ -81,7 +81,7 @@
    HERO
    ============================================================ */
 .hero { position: relative; min-height: 700px; overflow: hidden; color: #fff; display: flex; align-items: center; }
-.hero-image { position: absolute; inset: 0; background: center/cover no-repeat url('/img/main-hero.png'); }
+.hero-image { position: absolute; inset: 0; background: center/cover no-repeat url('img/main-hero.png'); }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(108deg, rgba(4,20,10,.93) 0%, rgba(6,26,14,.84) 40%, rgba(4,20,10,.18) 100%); }
 .hero::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, transparent 5%, var(--gold) 25%, var(--gold) 75%, transparent 95%); z-index: 2; }
 .hero-content { position: relative; z-index: 3; padding: 90px 0 160px; }
