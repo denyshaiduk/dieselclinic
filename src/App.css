@@ -159,6 +159,12 @@ h2 em { color: var(--gold-deep); font-style: normal; }
 .service-actions > a:hover, .text-link:hover { color: var(--gold2); }
 .service-actions .card-call { color: var(--muted); font-size: 10px; text-transform: none; letter-spacing: 0; font-family: 'Manrope', sans-serif; }
 .service-actions .card-call:hover { color: var(--gold-deep); }
+.card-menu { position: relative; display: flex; align-items: center; gap: 4px; }
+.card-menu-toggle { border: 1px solid var(--line2); background: transparent; color: var(--gold-deep); width: 26px; height: 26px; display: inline-flex; align-items: center; justify-content: center; padding: 0; cursor: pointer; border-radius: 2px; transition: transform .2s, border-color .2s, color .2s; }
+.card-menu-toggle:hover { color: var(--gold2); border-color: var(--gold); }
+.card-menu.is-open .card-menu-toggle { transform: rotate(180deg); border-color: var(--gold); }
+.card-menu .card-dropdown { top: calc(100% + 12px); left: 0; }
+.card-menu.is-open .card-dropdown { display: grid; }
 
 /* ============================================================
    REASON / ABOUT
@@ -256,12 +262,31 @@ h2 em { color: var(--gold-deep); font-style: normal; }
 .breadcrumbs { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,.55); font-size: 11px; margin-bottom: 44px; }
 .breadcrumbs a { color: var(--gold); text-decoration: none; transition: color .2s; }
 .breadcrumbs a:hover { color: var(--gold2); }
+.crumb-dropdown { position: relative; }
+.crumb-dropdown > button { border: 0; background: transparent; padding: 0; color: var(--gold); font: inherit; letter-spacing: inherit; text-transform: inherit; display: inline-flex; align-items: center; gap: 5px; cursor: pointer; transition: color .2s; }
+.crumb-dropdown > button:hover, .crumb-dropdown.is-open > button { color: var(--gold2); }
+.crumb-dropdown > button svg { transition: transform .2s; }
+.crumb-dropdown.is-open > button svg { transform: rotate(180deg); }
+.crumb-dropdown .dropdown-menu { top: calc(100% + 14px); left: 0; }
+.crumb-dropdown.is-open .dropdown-menu { display: grid; }
+.crumb-dropdown .dropdown-menu a.is-current { color: var(--gold-deep); background: var(--goldd); }
 .service-hero .eyebrow { margin: 0; }
 .service-hero h1 { max-width: 860px; margin: 16px 0; font: 700 clamp(38px, 5vw, 66px)/1.08 'Roboto Slab', serif; }
 .service-hero h1 em { color: var(--gold); font-style: normal; }
 .service-hero-content > p:last-of-type { max-width: 640px; color: rgba(224,250,236,.85); font-size: 15px; line-height: 1.7; }
 .service-hero-badge { position: absolute; z-index: 1; right: max(24px, calc((100% - 1200px) / 2)); bottom: 0; width: 170px; min-height: 127px; background: var(--gold); color: var(--ink); display: grid; place-content: center; justify-items: start; gap: 13px; padding: 22px; }
 .service-hero-badge span { font: 700 11px/1.35 'DM Mono', monospace; text-transform: uppercase; }
+
+/* ============================================================
+   SERVICE PAGE — QUICK RELATED (under hero)
+   ============================================================ */
+.quick-related { background: var(--bg2); border-bottom: 1px solid var(--line); padding: 22px 0; }
+.quick-related-inner { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.quick-related-label { margin: 0; color: var(--muted); font: 500 10px 'DM Mono', monospace; letter-spacing: .08em; text-transform: uppercase; white-space: nowrap; }
+.quick-related-list { display: flex; flex-wrap: wrap; gap: 10px; }
+.quick-related-list a { display: inline-flex; align-items: center; gap: 6px; padding: 9px 14px; background: var(--card); border: 1px solid var(--line2); border-radius: 999px; color: var(--text); text-decoration: none; font: 600 12px 'Manrope', sans-serif; transition: color .2s, border-color .2s, background .2s; }
+.quick-related-list a:hover { color: var(--gold-deep); border-color: var(--gold); background: var(--goldd); }
+.quick-related-list svg { color: var(--gold); opacity: .6; }
 
 /* ============================================================
    SERVICE PAGE — INTRO
@@ -370,7 +395,8 @@ footer { background: var(--bg2); border-top: 1px solid var(--line); }
   .nav.nav-open { display: flex; position: absolute; top: 69px; left: 0; right: 0; background: #F2F5FA; padding: 20px 16px; flex-direction: column; gap: 8px; border-bottom: 1px solid #D6DEE9; max-height: calc(100svh - 104px); overflow-y: auto; }
   .nav.nav-open .nav-dropdown { width: 100%; }
   .nav.nav-open .nav-dropdown > button { width: 100%; justify-content: space-between; font-size: 14px; padding: 12px 0; }
-  .nav.nav-open .dropdown-menu { display: grid; position: static; width: 100%; margin: 6px 0 2px; padding: 8px 14px; box-shadow: none; background: #E8EEF6; border: 1px solid #D6DEE9; }
+  .nav.nav-open .dropdown-menu { position: static; width: 100%; margin: 6px 0 2px; padding: 8px 14px; box-shadow: none; background: #E8EEF6; border: 1px solid #D6DEE9; }
+  .nav.nav-open .nav-dropdown:not(.is-open) .dropdown-menu { display: none; }
   .nav.nav-open .dropdown-menu a { padding: 9px 0; font-size: 12px; }
   .header-cta { display: none; }
   .menu-button { display: block; }
