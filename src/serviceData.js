@@ -58,11 +58,11 @@ const serviceDetails = {
 }
 
 export const serviceImages = [
-  'https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1400&q=85',
-  'https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=1400&q=85',
+  '/img/common-rail.jpg',
+  '/img/meh-forsunki.png',
+  '/img/remontpnvt-img.png',
+  '/img/xboschinjector-327x327.png.pagespeed.ic._0uFHOjUJm.png',
+  '/img/remont-tnvd.png',
 ]
 
 let imageCursor = 0

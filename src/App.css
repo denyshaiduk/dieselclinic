@@ -171,7 +171,7 @@ h2 em { color: var(--gold-deep); font-style: normal; }
    REASON / ABOUT
    ============================================================ */
 .reason { min-height: 680px; background: var(--bg2); color: var(--text); position: relative; display: grid; grid-template-columns: 1.05fr .95fr; }
-.reason-photo { position: relative; background-image: linear-gradient(90deg,rgba(4,7,12,.05),rgba(12,17,24,.60)), url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1300&q=85'); background-size: cover; background-position: center; }
+.reason-photo { position: relative; background-image: linear-gradient(90deg,rgba(4,7,12,.05),rgba(12,17,24,.60)), url('/img/grus-fors.png'); background-size: cover; background-position: center; }
 .reason-content { padding: 100px max(24px, calc((100vw - 1200px) / 2)) 82px 70px; }
 .reason h2 { color: var(--text); margin-top: 0; }
 .reason-intro { color: var(--muted); font-size: 14px; line-height: 1.75; max-width: 495px; }
@@ -520,3 +520,22 @@ footer { background: var(--bg2); border-top: 1px solid var(--line); }
   .footer-actions a { min-height: 44px; }
   .call-float { width: 54px; height: 54px; right: 16px; bottom: 16px; }
 }
+
+/* ============================================================
+   CALLBACK MODAL
+   ============================================================ */
+.modal-overlay { position: fixed; inset: 0; background: rgba(6,15,10,.6); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.modal-card { position: relative; background: #fff; border-radius: 16px; width: min(420px, 100%); padding: 36px 30px 30px; box-shadow: 0 30px 70px rgba(0,0,0,.35); }
+.modal-close { position: absolute; top: 14px; right: 14px; border: 0; background: var(--bg2); color: var(--text); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; }
+.modal-card h3 { margin: 0 0 8px; font: 700 24px 'Roboto Slab', serif; color: var(--text); }
+.modal-subtitle { margin: 0 0 22px; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.modal-card form { display: grid; gap: 14px; }
+.modal-card label { display: grid; gap: 6px; font: 600 12px 'Manrope', sans-serif; color: var(--muted); }
+.modal-card input { min-height: 48px; padding: 0 14px; border: 1px solid var(--line2); border-radius: 8px; font: 500 15px 'Manrope', sans-serif; color: var(--text); }
+.modal-card input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.modal-card .button { width: 100%; margin-top: 4px; }
+.modal-error { color: #C0392B; font-size: 13px; margin: 0; }
+.modal-phone-link { display: inline-flex; align-items: center; gap: 8px; justify-content: center; margin-top: 6px; color: var(--gold-deep); font: 600 13px 'Manrope', sans-serif; text-decoration: none; }
+.modal-success { display: grid; justify-items: center; text-align: center; gap: 10px; padding: 10px 0 4px; color: var(--gold-deep); }
+.modal-success h3 { margin: 4px 0 0; }
+.modal-success p { margin: 0 0 10px; color: var(--muted); font-size: 14px; }
